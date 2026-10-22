@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <script>
-(function(){var d=document.documentElement;var rm=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)&&!/[?&]motion=on/.test(location.search);window.__rm=rm;if(rm)return;d.classList.add("anim");setTimeout(function(){d.classList.remove("anim")},3500)})();
+(function(){var d=document.documentElement;var rm=/[?&]motion=off/.test(location.search);window.__rm=rm;if(rm)return;d.classList.add("anim");setTimeout(function(){d.classList.remove("anim")},3500)})();
 </script>
 <style>
 /* Layout: every section is a two-column spread. The left column is a sticky square of pixels (a dot-matrix picture) with a caption card; the right column carries a heavy headline and the content in cards. One graphite background, one blue accent with a four-step ramp for the pixels. Dark single look by design. */
