@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Enzo Maziviero, Analista de Sistemas e Desenvolvedor Full Stack em Itajaí, SC. Mais de 5 anos em sistemas logísticos (TMS e ERP), integrações e automação de processos.">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Enzo Maziviero · Analista de Sistemas">
+<meta property="og:description" content="Analista de Sistemas e Desenvolvedor Full Stack. Trajetória em sistemas logísticos, integrações e automação.">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%230d1117%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%224%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2358a6ff%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%224%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2317508f%22%2F%3E%3Crect%20x%3D%2216%22%20y%3D%224%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2358a6ff%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2210%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2317508f%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2358a6ff%22%2F%3E%3Crect%20x%3D%2216%22%20y%3D%2210%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2317508f%22%2F%3E%3Crect%20x%3D%224%22%20y%3D%2216%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2358a6ff%22%2F%3E%3Crect%20x%3D%2210%22%20y%3D%2216%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2317508f%22%2F%3E%3Crect%20x%3D%2216%22%20y%3D%2216%22%20width%3D%224%22%20height%3D%224%22%20rx%3D%221%22%20fill%3D%22%2358a6ff%22%2F%3E%3C%2Fsvg%3E">
+<title>Portfólio Enzo Maziviero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: every section is a two-column spread. The left column is a sticky square of pixels (a dot-matrix picture) with a caption card; the right column carries a heavy headline and the content in cards. One graphite background, one blue accent with a four-step ramp for the pixels. Dark single look by design. */
+:root{
+  --bg:#0d1117; --surface:#161b22; --raise:#1c2129; --fg:#e6edf3; --muted:#8d96a0; --line:#30363d;
+  --a:#58a6ff; --on-a:#04182e;
+  --c0:#141a21; --c1:#0f2a4a; --c2:#17508f; --c3:#2f81d8; --c4:#58a6ff;
+  --f-d:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-b:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  --f-m:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gut:max(16px,4vw);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-b);font-size:17px;line-height:1.6;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
+.prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:2px;z-index:45;background:var(--a);transform:scaleX(0);transform-origin:0 50%}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-d);font-weight:700;font-size:17px;letter-spacing:-.01em;text-decoration:none}
+.logo{display:grid;grid-template-columns:repeat(3,6px);gap:2px}
+.logo i{width:6px;height:6px;border-radius:1.5px;background:var(--c2)}
+.logo i.on{background:var(--c4)}
+nav.links{display:flex;gap:6px}
+nav.links a{font-family:var(--f-m);font-size:12.5px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+nav.links a:hover{color:var(--fg);background:var(--surface)}
+@media (max-width:640px){
+  header.bar .wrap{flex-wrap:wrap;gap:2px 12px;padding-block:8px}
+  .brand{white-space:nowrap}
+  nav.links{flex:1 1 100%;overflow-x:auto;scrollbar-width:none;gap:2px;margin:0 -8px}
+  nav.links::-webkit-scrollbar{display:none}
+  nav.links a{white-space:nowrap}
+}
+:focus-visible{outline:2px solid var(--a);outline-offset:3px}
+
+/* hero */
+.hero{padding:34px 0 52px}
+.toprow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:var(--surface)}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--a)}
+.pill small{font-family:var(--f-m);font-weight:400;color:var(--muted);font-size:12px}
+.toprow a{font-family:var(--f-m);font-size:12.5px;color:var(--muted);text-decoration:none}
+.panel{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px 20px 14px}
+.panel .ph{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;margin-bottom:12px;font-size:15px}
+.panel .ph b{font-weight:700}
+.legend{display:flex;gap:12px;align-items:center;font-family:var(--f-m);font-size:11.5px;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.heat{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px}
+.heat .rows{display:flex;flex-direction:column;font-family:var(--f-m);font-size:11px;color:var(--muted);margin-bottom:24px}
+.heat .rows span{flex:1;display:flex;align-items:center}
+.heat svg{width:100%;height:auto;display:block}
+.years{position:relative;height:18px;margin:6px 0 0 0;font-family:var(--f-m);font-size:11px;color:var(--muted)}
+.years span{position:absolute;transform:translateX(-50%)}
+.panel .pf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-family:var(--f-m);font-size:12px;color:var(--muted)}
+.av{width:34px;height:34px;border-radius:9px;object-fit:cover;border:1px solid var(--line);display:block}
+.hmain{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center;margin:34px 0 44px}
+.hmain .eyebrow{margin-bottom:10px}
+.hmain h1{font-size:clamp(40px,6.2vw,84px);line-height:.96;margin:0 0 22px}
+.hmain h1 em{display:block}
+.hmain p{margin:0 0 24px;color:var(--muted);font-size:clamp(17px,1.6vw,20px);line-height:1.55;max-width:46ch}
+.pwrap{position:relative;margin:0 0 0 12px}
+.pwrap::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--c2);border-radius:20px}
+.portrait{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
+.portrait img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:30% 30%}
+.pwrap figcaption{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-family:var(--f-m);font-size:12px}
+.pwrap figcaption i{width:7px;height:7px;border-radius:50%;background:var(--a);display:inline-block}
+@media (max-width:860px){.hmain{grid-template-columns:1fr}.pwrap{margin:0 14px 14px 0;max-width:420px}}
+.hgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:end;margin:56px 0 44px}
+h1{font-family:var(--f-d);font-weight:800;font-size:clamp(46px,7.6vw,100px);line-height:.94;letter-spacing:-.045em;margin:0;text-wrap:balance}
+h1 em{font-style:normal;color:var(--a)}
+.hgrid p{margin:0 0 22px;color:var(--muted);font-size:clamp(17px,1.7vw,21px);line-height:1.55;max-width:46ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.pri{background:var(--a);color:var(--on-a);border-color:var(--a)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));border-top:1px solid var(--line);padding-top:26px;gap:22px 28px}
+.stat b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.6vw,72px);line-height:1;letter-spacing:-.04em}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:15px;max-width:22ch}
+
+/* sections */
+.sec{padding:76px 0;border-top:1px solid var(--line)}
+.spread{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,.64fr);gap:clamp(24px,4.4vw,64px);align-items:start}
+.aside{position:sticky;top:84px}
+.pix{border:1px solid var(--line);border-radius:14px;background:var(--c0);padding:14px;aspect-ratio:1}
+.pix svg{width:100%;height:100%;display:block}
+.c{fill:var(--c0);transition:fill .35s ease}
+.l1{fill:var(--c1)}.l2{fill:var(--c2)}.l3{fill:var(--c3)}.l4{fill:var(--c4)}
+.cap2{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:11px 14px;font-family:var(--f-m);font-size:12.5px;line-height:1.5}
+.cap2 .id{display:flex;justify-content:space-between;color:var(--a);margin-bottom:2px}
+.cap2 .id span:last-child{color:var(--muted)}
+.eyebrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;white-space:nowrap;font-family:var(--f-m);font-size:13px;color:var(--a);margin-bottom:12px}
+.strip{display:flex;gap:4px;flex-wrap:wrap}
+.strip i{width:11px;height:11px;border-radius:3px;background:var(--c1)}
+.strip i.m{background:var(--c2)}.strip i.h{background:var(--c4)}
+h2{font-family:var(--f-d);font-weight:800;font-size:clamp(36px,5.4vw,64px);line-height:1;letter-spacing:-.045em;margin:0 0 16px;text-wrap:balance}
+.sub{color:var(--muted);font-size:clamp(17px,1.6vw,20px);line-height:1.55;margin:0 0 30px;max-width:52ch}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{border-radius:14px;padding:22px}
+/* spotlight: a soft glow and a lit border edge that follow the pointer */
+@property --glow{syntax:"<number>";inherits:false;initial-value:0}
+.card,.job{--mx:50%;--my:50%;--glow:0;border:1px solid transparent;
+  background:radial-gradient(380px circle at var(--mx) var(--my),rgba(88,166,255,calc(var(--glow)*.24)),transparent 70%) padding-box,linear-gradient(var(--surface),var(--surface)) padding-box,radial-gradient(340px circle at var(--mx) var(--my),rgba(110,180,255,calc(var(--glow)*1)),var(--line) 75%) border-box;
+  transition:--glow .35s ease}
+.card:hover,.job:hover{--glow:1}
+.spread.mid{align-items:center}
+.card h3{font-family:var(--f-d);font-weight:700;font-size:21px;letter-spacing:-.02em;margin:0 0 6px;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.card h3 small{font-family:var(--f-m);font-weight:500;font-size:12px;color:var(--a);letter-spacing:0}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15.5px;line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--f-m);font-size:12px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--raise)}
+.lst{list-style:none;margin:0;padding:0}
+.lst li{padding:10px 0;border-top:1px solid var(--line)}
+.lst li:first-child{border-top:0;padding-top:2px}
+.lst b{display:block;font-weight:600;font-size:16px;line-height:1.35}
+.lst span{display:block;font-family:var(--f-m);font-size:12px;color:var(--muted);margin-top:2px}
+
+/* timeline */
+.tl{position:relative;padding-left:44px}
+.tl::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.job{position:relative;border-radius:14px;padding:22px 24px;margin-bottom:16px}
+.job::before{content:"";position:absolute;left:-44px;top:24px;width:24px;height:24px;border-radius:7px;background:var(--bg);border:2px solid var(--c3);box-sizing:border-box}
+.job.on::before{background:var(--a);border-color:var(--a);box-shadow:0 0 0 5px var(--c1)}
+.jh{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+.job h3{font-family:var(--f-d);font-weight:700;font-size:clamp(21px,2.3vw,26px);letter-spacing:-.02em;margin:0;line-height:1.15}
+.dt{font-family:var(--f-m);font-size:12.5px;color:var(--muted)}
+.co{color:var(--a);font-weight:600;margin:4px 0 12px}
+.meta{display:flex;flex-wrap:wrap;margin:0 0 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden}
+.meta div{flex:1 1 150px;display:flex;gap:9px;align-items:flex-start;padding:9px 13px;border-right:1px solid var(--line)}
+.meta div:last-child{border-right:0}
+.meta svg{width:15px;height:15px;flex:none;margin-top:2px;fill:none;stroke:var(--a);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.meta small{display:block;font-family:var(--f-m);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.meta span{display:block;font-size:14.5px;font-weight:500;line-height:1.3}
+.job ul{margin:0 0 14px;padding-left:20px;color:#c9d1d9}
+.job li{margin:7px 0;padding-left:2px}
+.job li::marker{color:var(--c3)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0!important}
+.links .btn{padding:9px 16px;font-size:15px}
+.card.wide{grid-column:1/-1}
+.gstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:18px}
+.gstats b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-.04em}
+.gstats span{display:block;margin-top:6px;color:var(--muted);font-size:15px}
+.langs{display:flex;gap:3px;height:12px;border-radius:6px;overflow:hidden;margin-bottom:10px}
+.langs i{display:block;min-width:6px}
+.legend2{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-m);font-size:12px;color:var(--muted);margin-bottom:26px}
+.legend2 i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.card .ptag{margin-bottom:4px}
+.card>h3{margin-bottom:8px}
+.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.tab{font:inherit;text-align:left;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.tab b{display:block;font-family:var(--f-d);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.tab span{display:block;font-family:var(--f-m);font-size:11.5px;color:var(--muted);margin-top:2px}
+.tab[aria-selected="true"]{border-color:var(--a);background:var(--c1)}
+.proj{padding:0;overflow:hidden}
+.proj[hidden]{display:none}
+.shot{border-bottom:1px solid var(--line);background:#0a0d12}
+.bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--raise);border-bottom:1px solid var(--line);font-family:var(--f-m);font-size:11.5px;color:var(--muted)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.bar span{margin-left:10px;padding:2px 10px;border-radius:6px;background:var(--bg);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot img{display:block;width:100%;height:auto}
+.pbody{padding:22px 24px 24px}
+.ptag{font-family:var(--f-m);font-size:12px;color:var(--a);margin-bottom:6px}
+.proj h3{display:block;font-size:clamp(24px,3vw,32px);margin:0 0 10px}
+.proj p{color:var(--muted);margin:0 0 14px;font-size:16px}
+.pl{margin:0 0 16px;padding-left:20px;color:#c9d1d9}
+.pl li{margin:6px 0}
+.pl li::marker{color:var(--c3)}
+.contactcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contactcards a.card{text-decoration:none}
+.contactcards .card h3{margin:0}
+.contactcards .card p{margin:6px 0 0;font-family:var(--f-m);font-size:12.5px}
+footer{border-top:1px solid var(--line);padding:26px 0 48px;color:var(--muted);font-family:var(--f-m);font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .hgrid,.spread{grid-template-columns:1fr}
+  .aside{position:static}
+  .pix{aspect-ratio:16/9;max-height:300px}
+  .cards,.contactcards{grid-template-columns:1fr}
+  .tl{padding-left:34px}.job::before{left:-34px;width:20px;height:20px}
+  .tl::before{left:9px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.c{transition:none}}
+</style>
+</head>
+<body>
+
+
+<div class="prog" id="prog" aria-hidden="true"></div>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img class="av" alt="" src="assets/avatar.jpg">enzo maziviero</a>
+    <nav class="links" aria-label="Principal"><a href="#stack">stack</a><a href="#trajetoria">trajetória</a><a href="#projetos">projetos</a><a href="#github">github</a><a href="#formacao">formação</a><a href="#contato">contato</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap">
+      <div class="toprow">
+        <span class="pill"><i></i>Itajaí, SC <small id="clock">--:--</small></span>
+        <a href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener">linkedin.com/in/enzo-maziviero</a>
+      </div>
+
+      <div class="hmain">
+        <div>
+          <div class="eyebrow">// olá, eu sou</div>
+          <h1>Enzo<br>Maziviero<br><em>Analista de Sistemas.</em></h1>
+          <p>Desenvolvedor Full Stack com mais de 5 anos em sistemas logísticos (TMS e ERP), integrações e automação. Atuo entre o negócio e a tecnologia: levanto requisitos, desenho o processo e entrego a solução de ponta a ponta.</p>
+          <div class="btns"><a class="btn pri" href="#trajetoria">Ver trajetória</a><a class="btn" href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+        </div>
+        <figure class="pwrap">
+          <div class="portrait"><img alt="Retrato de Enzo Maziviero sentado à mesa, com um teclado mecânico à frente" src="assets/photo.jpg"></div>
+          <figcaption><i></i>aberto a oportunidades</figcaption>
+        </figure>
+      </div>
+      <div class="panel">
+        <div class="ph"><span><b>82 meses</b> de jan/2020 a out/2026, um quadrado por mês</span>
+          <span class="legend"><span><i style="background:var(--c2)"></i>suporte</span><span><i style="background:var(--c4)"></i>analista</span></span></div>
+        <div class="heat"><div class="rows" id="heatrows"></div><div><div id="heat"></div><div class="years" id="years"></div></div></div>
+        <div class="pf"><span>passe o mouse para ver o mês</span><span>role para explorar ↓</span></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5+</b><span>anos de experiência em tecnologia</span></div>
+        <div class="stat"><b>5 · 6</b><span>empresas e cargos na trajetória</span></div>
+        <div class="stat"><b>36</b><span>competências em 6 áreas</span></div>
+        <div class="stat"><b>1</b><span>multinacional de logística (GEODIS)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="stack">
+    <div class="wrap spread">
+      <aside class="aside">
+        <div class="pix" data-fig="chip" role="img" aria-label="Chip estilizado em pixels"></div>
+        <div class="cap2"><div class="id"><span>01 / 06</span><span>stack</span></div>36 competências em 6 áreas</div>
+      </aside>
+      <div>
+        <div class="eyebrow">01 / stack <span class="strip" data-strip="1"></span></div>
+        <h2>Com o que eu trabalho</h2>
+        <p class="sub">Da análise de requisitos ao desenho da solução, do front-end ao banco de dados, da integração entre sistemas à automação com IA.</p>
+        <div class="cards">
+          <div class="card wide"><div class="ptag">função principal</div><h3>Análise de sistemas <small>9</small></h3><p>Do problema ao desenho da solução: entender a necessidade, definir as regras e conectar os sistemas.</p><div class="chips"><span class="chip">Levantamento de requisitos</span><span class="chip">Análise de negócios</span><span class="chip">Regras de negócio</span><span class="chip">Desenho de soluções</span><span class="chip">Modelagem de dados</span><span class="chip">Integração de sistemas</span><span class="chip">Documentação técnica</span><span class="chip">Testes</span><span class="chip">Gestão de incidentes</span></div></div>
+          <div class="card"><h3>Desenvolvimento <small>9</small></h3><p>Front-end, back-end e integrações por API.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">REST APIs</span><span class="chip">JSON</span><span class="chip">Webhooks</span><span class="chip">Git / GitHub</span><span class="chip">Docker</span></div></div>
+          <div class="card"><h3>Negócio e processos <small>7</small></h3><p>Requisitos, desenho de processo e indicadores.</p><div class="chips"><span class="chip">ERP</span><span class="chip">CRM</span><span class="chip">TMS</span><span class="chip">BPMN</span><span class="chip">BPMS</span><span class="chip">SLA</span><span class="chip">KPIs</span></div></div>
+          <div class="card"><h3>Dados e cloud <small>5</small></h3><p>Modelagem, SQL e serviços de nuvem.</p><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">SQL</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">Render</span></div></div>
+          <div class="card"><h3>Gestão e qualidade <small>4</small></h3><p>Agilidade, serviços de TI e melhoria contínua.</p><div class="chips"><span class="chip">Six Sigma</span><span class="chip">ITIL</span><span class="chip">Scrum</span><span class="chip">Kanban</span></div></div>
+          <div class="card"><h3>Automação e IA <small>2</small></h3><p>Fluxos automatizados e agentes de IA no processo.</p><div class="chips"><span class="chip">n8n</span><span class="chip">AI Agents / LLMs</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="trajetoria">
+    <div class="wrap spread">
+      <aside class="aside">
+        <div class="pix" id="trajfig" data-fig="cotareal" role="img" aria-label="Figura em pixels que muda a cada experiência"></div>
+        <div class="cap2"><div class="id"><span id="tcap1">2026</span><span>02 / 06</span></div><span id="tcap2">Cota Real Investimentos</span></div>
+      </aside>
+      <div>
+        <div class="eyebrow">02 / trajetória <span class="strip" data-strip="2"></span></div>
+        <h2>Experiência</h2>
+        <p class="sub">Seis cargos em cinco empresas. A figura ao lado muda a cada experiência, com o setor onde atuei.</p>
+        <div class="tl">
+
+          <article class="job on" data-key="cotareal" data-year="2026" data-co="Cota Real Investimentos">
+            <div class="jh"><h3>Analista de Sistemas</h3><span class="dt">fev 2026 — out 2026</span></div>
+            <div class="co">Cota Real Investimentos</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>Balneário Camboriú, SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 8 meses</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Investimentos</span></p></div>
+            </div>
+            <ul>
+              <li>Desenvolvimento Full Stack com React, TypeScript e Node.js.</li>
+              <li>Workflows em n8n com status, responsáveis, SLA, histórico e rastreabilidade.</li>
+              <li>Supabase e PostgreSQL: modelagem, autenticação, RLS, policies e Edge Functions.</li>
+              <li>IA aplicada ao desenvolvimento (Claude Code e Lovable), em times com Scrum e Kanban.</li>
+            </ul>
+            <div class="chips"><span class="chip">n8n</span><span class="chip">React</span><span class="chip">Supabase</span><span class="chip">IA</span></div>
+          </article>
+
+          <article class="job" data-key="triforsys" data-year="2024 — 2026" data-co="Triforsys Sistemas">
+            <div class="jh"><h3>Analista de Sistemas</h3><span class="dt">mar 2024 — fev 2026</span></div>
+            <div class="co">Triforsys Sistemas</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 1 ano e 11 meses</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Sistemas · TMS e ERP</span></p></div>
+            </div>
+            <ul>
+              <li>Análise e desenvolvimento: back-end em Node.js e APIs REST, front-end em React.</li>
+              <li>SQL avançado: views, functions, procedures e triggers.</li>
+              <li>Integrações entre TMS, ERPs e sistemas legados.</li>
+              <li>Automações em Python, relatórios em Crystal Reports e IA aplicada.</li>
+            </ul>
+            <div class="chips"><span class="chip">TMS</span><span class="chip">ERP</span><span class="chip">SQL</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">Python</span></div>
+          </article>
+
+          <article class="job" data-key="triforsys" data-year="2023 — 2024" data-co="Triforsys Sistemas">
+            <div class="jh"><h3>Suporte de Sistemas</h3><span class="dt">abr 2023 — mar 2024</span></div>
+            <div class="co">Triforsys Sistemas</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 11 meses</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Sistemas · TMS e ERP</span></p></div>
+            </div>
+            <ul>
+              <li>Integrações via APIs REST e EDI (tracking e eventos) em ambientes TMS e ERP.</li>
+              <li>Análises em SQL, testes e documentação técnica.</li>
+            </ul>
+            <div class="chips"><span class="chip">APIs REST</span><span class="chip">EDI</span><span class="chip">SQL</span></div>
+          </article>
+
+          <article class="job" data-key="geodis" data-year="2022" data-co="GEODIS Freight Forwarding">
+            <div class="jh"><h3>Assistente de TI</h3><span class="dt">fev 2022 — fev 2023</span></div>
+            <div class="co">GEODIS Freight Forwarding</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>São Paulo, SP</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 1 ano</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Logística · multinacional</span></p></div>
+            </div>
+            <ul>
+              <li>Primeira experiência em ambiente multinacional de logística.</li>
+              <li>Gestão de acessos e permissões com Active Directory.</li>
+              <li>Melhoria de processos com Scrum, ITIL e Six Sigma, e relacionamento com fornecedores de TI.</li>
+            </ul>
+            <div class="chips"><span class="chip">Active Directory</span><span class="chip">ITIL</span><span class="chip">Six Sigma</span></div>
+          </article>
+
+          <article class="job" data-key="skychart" data-year="2021" data-co="Skychart WebSoftwares">
+            <div class="jh"><h3>Suporte de Sistemas N2</h3><span class="dt">jan 2021 — dez 2021</span></div>
+            <div class="co">Skychart WebSoftwares</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>Itajaí, SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 1 ano</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Software logístico · comex</span></p></div>
+            </div>
+            <ul>
+              <li>Suporte N2 em sistema logístico internacional, de uma software house voltada ao agenciamento de carga e ao comércio exterior.</li>
+              <li>Tratamento de incidentes e bugs, com análises e consultas em SQL.</li>
+              <li>Uso de Git, HTML e CSS no dia a dia.</li>
+              <li>Treinamento de usuários.</li>
+            </ul>
+            <div class="chips"><span class="chip">Comex</span><span class="chip">SQL</span><span class="chip">Git</span><span class="chip">Suporte N2</span></div>
+          </article>
+
+          <article class="job" data-key="caieiras" data-year="2020" data-co="Prefeitura de Caieiras">
+            <div class="jh"><h3>Suporte Técnico</h3><span class="dt">jan 2020 — jan 2021</span></div>
+            <div class="co">Prefeitura de Caieiras</div>
+            <div class="meta">
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>Caieiras, SP</span></p></div>
+              <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 1 ano</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Serviço público</span></p></div>
+            </div>
+            <ul>
+              <li>Suporte e infraestrutura de TI para os usuários da prefeitura.</li>
+              <li>Primeiras atividades de desenvolvimento web, em paralelo ao suporte.</li>
+            </ul>
+            <div class="chips"><span class="chip">Suporte</span><span class="chip">Infraestrutura</span><span class="chip">Web</span></div>
+          </article>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projetos">
+    <div class="wrap spread">
+      <aside class="aside">
+        <div class="pix" data-fig="window" role="img" aria-label="Janela de navegador em pixels"></div>
+        <div class="cap2"><div class="id"><span>03 / 06</span><span>projetos</span></div>4 sites de front-end e design</div>
+      </aside>
+      <div>
+        <div class="eyebrow">03 / projetos <span class="strip" data-strip="3"></span></div>
+        <h2>Front-end e design</h2>
+        <p class="sub">Quatro sites com foco em interface e identidade visual. Clique para alternar entre eles.</p>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" aria-selected="true" data-p="oscar" id="tab-oscar"><b>OSC Árvore da Vida</b><span>site institucional · terceiro setor</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-p="alba" id="tab-alba"><b>Clínica Alba</b><span>site de clínica · saúde e bem-estar</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-p="mcp" id="tab-mcp"><b>MCP Storymaker</b><span>landing page · curso online</span></button>
+          <button class="tab" role="tab" aria-selected="false" data-p="ff" id="tab-ff"><b>FF Logística</b><span>proposta de redesign · logística</span></button>
+        </div>
+
+        <article class="card proj" id="p-oscar" role="tabpanel" aria-labelledby="tab-oscar">
+          <div class="shot"><div class="bar"><i></i><i></i><i></i><span>oscarvoredavida.com.br</span></div><img alt="Página inicial do site da OSC Árvore da Vida, com floresta ao fundo e o título Cuidado, esperança e recomeço" src="assets/oscar.jpg"></div>
+          <div class="pbody">
+            <div class="ptag">site institucional</div>
+            <h3>OSC Árvore da Vida</h3>
+            <p>Site de uma Organização da Sociedade Civil de Balneário Camboriú, dedicada ao acolhimento de pessoas em situação de vulnerabilidade desde 2017. Apresenta a instituição, as modalidades de atendimento e os números de impacto, com chamada para doação.</p>
+            <ul class="pl">
+              <li>Página inicial em tela cheia, com foto de floresta e título em três linhas nas cores verde e dourado.</li>
+              <li>Navegação por serviço (Comunidade Terapêutica, Casa Alva e Casa de Passagem) e botão "Doe Agora" sempre visível no topo.</li>
+              <li>Seções de missão, valores, serviços, impacto e depoimentos, e um player de música ambiente opcional.</li>
+            </ul>
+            <div class="chips"><span class="chip">Front-end</span><span class="chip">Design</span><span class="chip">Site institucional</span><span class="chip">Terceiro setor</span></div>
+            <p style="margin:16px 0 0"><a class="btn pri" href="https://oscarvoredavida.com.br/" target="_blank" rel="noopener">Ver site ↗</a></p>
+          </div>
+        </article>
+
+        <article class="card proj" id="p-alba" role="tabpanel" aria-labelledby="tab-alba" hidden>
+          <div class="shot"><div class="bar"><i></i><i></i><i></i><span>clinicaalba.care</span></div><img alt="Página inicial do site da Clínica Alba, com o título Recupere sua confiança e um carrossel de tratamentos" src="assets/alba.jpg"></div>
+          <div class="pbody">
+            <div class="ptag">site de clínica</div>
+            <h3>Clínica Alba</h3>
+            <p>Site de uma clínica de saúde e bem-estar, com os tratamentos capilares em destaque e chamada para agendar consulta. A identidade é elegante e acolhedora, pensada para transmitir confiança.</p>
+            <ul class="pl">
+              <li>Paleta em creme, verde profundo e dourado, com o logotipo dourado centralizado no topo.</li>
+              <li>Carrossel de tratamentos, cada um com título, descrição e chamada para conhecer.</li>
+              <li>Menu em hambúrguer e botão "Agende uma consulta" sempre à vista no cabeçalho.</li>
+            </ul>
+            <div class="chips"><span class="chip">Front-end</span><span class="chip">Design</span><span class="chip">Site de clínica</span><span class="chip">Carrossel</span></div>
+            <p style="margin:16px 0 0"><a class="btn pri" href="https://www.clinicaalba.care/" target="_blank" rel="noopener">Ver site ↗</a></p>
+          </div>
+        </article>
+
+        <article class="card proj" id="p-mcp" role="tabpanel" aria-labelledby="tab-mcp" hidden>
+          <div class="shot"><div class="bar"><i></i><i></i><i></i><span>mcp-site.vercel.app</span></div><img alt="Página inicial da landing page MCP, com o título Do zero ao propósito" src="assets/mcp.jpg"></div>
+          <div class="pbody">
+            <div class="ptag">landing page</div>
+            <h3>MCP Storymaker</h3>
+            <p>Landing page de um curso para quem está começando como storymaker e reelsmaker. Posiciona a marca, apresenta o conteúdo e leva o visitante até a compra.</p>
+            <ul class="pl">
+              <li>Página inicial com retratos em destaque, título em branco e roxo e o botão "Adquirir já!" sempre visível no topo.</li>
+              <li>Seções de módulos, aprendizados, feedbacks, sobre e perguntas frequentes.</li>
+              <li>React, Vite e Tailwind CSS, com foco em responsividade e carregamento rápido.</li>
+            </ul>
+            <div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span><span class="chip">Landing page</span></div>
+            <p class="links"><a class="btn pri" href="https://mcp-site.vercel.app/" target="_blank" rel="noopener">Ver site ↗</a><a class="btn" href="https://github.com/devmaziviero/mcp-site" target="_blank" rel="noopener">Código ↗</a></p>
+          </div>
+        </article>
+
+        <article class="card proj" id="p-ff" role="tabpanel" aria-labelledby="tab-ff" hidden>
+          <div class="shot"><div class="bar"><i></i><i></i><i></i><span>ff-logistica.vercel.app</span></div><img alt="Página inicial da proposta de redesign da FF Logística, com o título Sua logística simplificada do armazém à entrega" src="assets/ff.jpg"></div>
+          <div class="pbody">
+            <div class="ptag">proposta de redesign</div>
+            <h3>FF Logística</h3>
+            <p>Proposta de redesign do site de uma empresa de logística, com soluções, estrutura e contato. Visual forte em azul-marinho e amarelo, com animações de rolagem.</p>
+            <ul class="pl">
+              <li>Quatro páginas (início, soluções, estrutura e contato) em HTML e CSS puros, sem etapa de build.</li>
+              <li>Animações com GSAP, ScrollTrigger e Lenis, com opção de desligá-las na própria página.</li>
+              <li>Mapa estilizado do Brasil gerado por script, e publicação automática na Vercel a cada envio.</li>
+            </ul>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">GSAP</span><span class="chip">Lenis</span><span class="chip">Redesign</span></div>
+            <p class="links"><a class="btn pri" href="https://ff-logistica.vercel.app/" target="_blank" rel="noopener">Ver site ↗</a></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="github">
+    <div class="wrap spread">
+      <aside class="aside">
+        <div class="pix" data-fig="branch" role="img" aria-label="Grafo de commits e ramificações em pixels"></div>
+        <div class="cap2"><div class="id"><span>04 / 06</span><span>github</span></div>12 repositórios · 9 públicos</div>
+      </aside>
+      <div>
+        <div class="eyebrow">04 / github <span class="strip" data-strip="4"></span></div>
+        <h2>Código no GitHub</h2>
+        <p class="sub">Projetos full stack e mobile que mantenho lá, com banco de dados, API e publicação.</p>
+        <div class="gstats">
+          <div><b>12</b><span>repositórios</span></div>
+          <div><b>9</b><span>públicos</span></div>
+          <div><b>5</b><span>linguagens</span></div>
+        </div>
+        <div class="langs" role="img" aria-label="Linguagens principais: JavaScript 6, TypeScript 2, CSS 1, HTML 2, PHP 1 repositórios">
+          <i style="flex:6;background:var(--c4)"></i><i style="flex:2;background:var(--c3)"></i><i style="flex:1;background:var(--c2)"></i><i style="flex:2;background:var(--c1)"></i><i style="flex:1;background:var(--line)"></i>
+        </div>
+        <div class="legend2"><span><i style="background:var(--c4)"></i>JavaScript 6</span><span><i style="background:var(--c3)"></i>TypeScript 2</span><span><i style="background:var(--c2)"></i>CSS 1</span><span><i style="background:var(--c1)"></i>HTML 2</span><span><i style="background:var(--line)"></i>PHP 1</span></div>
+
+        <div class="cards">
+          <div class="card wide">
+            <div class="ptag">projeto acadêmico · full stack</div>
+            <h3>Doa Fácil</h3>
+            <p>Sistema web de divulgação de doações por região. Quem tem algo para doar publica um anúncio com fotos e local de retirada, e quem se interessa entra em contato direto.</p>
+            <ul class="pl">
+              <li>Front-end em React, TypeScript e Vite, com Material UI.</li>
+              <li>API em Node.js e Express, PostgreSQL com SQL puro e envio de até 5 fotos por anúncio ao Supabase Storage.</li>
+              <li>Estado e cidade vêm da API pública do IBGE, e cada anúncio é gerenciado por um código, sem login na primeira versão.</li>
+              <li>Publicação em Vercel, Render e Supabase.</li>
+            </ul>
+            <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Supabase</span></div>
+            <p class="links"><a class="btn" href="https://github.com/devmaziviero/doa-facil" target="_blank" rel="noopener">Código ↗</a></p>
+          </div>
+          <div class="card">
+            <div class="ptag">projeto acadêmico · mobile + API</div>
+            <h3>BusTrack</h3>
+            <p>App para quem usa transporte público: encontra pontos e rotas próximos, favorita linhas e configura alarmes, com login por token.</p>
+            <ul class="pl">
+              <li>App em React (mobile) com geolocalização.</li>
+              <li>API própria com JWT e controle de acesso, ligada ao PostgreSQL no Supabase.</li>
+              <li>Parte dos dados de ônibus ainda é simulada.</li>
+            </ul>
+            <div class="chips"><span class="chip">React</span><span class="chip">JWT</span><span class="chip">REST</span><span class="chip">PostgreSQL</span></div>
+            <p class="links"><a class="btn" href="https://github.com/devmaziviero/app-bustrack" target="_blank" rel="noopener">App ↗</a><a class="btn" href="https://github.com/devmaziviero/bustrack-api" target="_blank" rel="noopener">API ↗</a></p>
+          </div>
+          <div class="card">
+            <div class="ptag">repositório privado · gestão interna</div>
+            <h3>Sistema de gestão de uma OSC</h3>
+            <p>Sistema web de gestão interna de uma organização do terceiro setor, com painel e módulos de cadastros, estoque, financeiro e documentos.</p>
+            <ul class="pl">
+              <li>React, Vite e Tailwind CSS, com Supabase para banco, autenticação e arquivos.</li>
+              <li>Schema versionado em migrations, perfis de acesso e regras de segurança por linha (RLS).</li>
+            </ul>
+            <div class="chips"><span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Supabase</span><span class="chip">RLS</span></div>
+          </div>
+                  <div class="card wide">
+            <div class="ptag">projeto pessoal · front-end</div>
+            <h3>Este portfólio</h3>
+            <p>O próprio site que você está vendo: uma página única, sem framework e sem etapa de build, pensada para contar a trajetória por setor.</p>
+            <ul class="pl">
+              <li>HTML, CSS e JavaScript puros, com as figuras em pixels geradas por código e a figura da trajetória trocando a cada experiência.</li>
+              <li>Mapa de 82 meses e demais gráficos montados a partir dos dados da trajetória.</li>
+              <li>Publicado na Vercel, com deploy automático a cada envio ao GitHub.</li>
+            </ul>
+            <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">SVG</span><span class="chip">Vercel</span></div>
+            <p class="links"><a class="btn" href="https://github.com/devmaziviero/portfolio" target="_blank" rel="noopener">Código ↗</a></p>
+          </div>
+        </div>
+        <p class="links" style="margin-top:18px"><a class="btn pri" href="https://github.com/devmaziviero" target="_blank" rel="noopener">Ver perfil no GitHub ↗</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="formacao">
+    <div class="wrap spread">
+      <aside class="aside">
+        <div class="pix" data-fig="cap" role="img" aria-label="Capelo de formatura em pixels"></div>
+        <div class="cap2"><div class="id"><span>05 / 06</span><span>formação</span></div>3 formações · 4 certificações</div>
+      </aside>
+      <div>
+        <div class="eyebrow">05 / formação <span class="strip" data-strip="5"></span></div>
+        <h2>Formação e certificações</h2>
+        <p class="sub">Graduação em andamento de conclusão em 2026, base técnica e cursos que sustentam o dia a dia.</p>
+        <div class="cards">
+          <div class="card"><h3>Formação <small>3</small></h3><ul class="lst"><li><b>Tecnólogo em Análise e Desenvolvimento de Sistemas</b><span>UNIVALI · conclusão em 2026</span></li><li><b>Técnico em Informática para Internet</b><span>ETEC de Caieiras · 2022</span></li><li><b>Desenvolvimento Full Stack</b><span>Alura · 2023</span></li></ul></div>
+          <div class="card"><h3>Certificações <small>4</small></h3><ul class="lst"><li><b>Six Sigma Yellow Belt</b><span>Coursera · 2022</span></li><li><b>Gestão de Serviços de TI</b><span>Coursera · 2023</span></li><li><b>Redes Cisco</b><span>Cisco Networking Academy · 2024</span></li><li><b>Microsoft 365</b><span>Microsoft · 2025</span></li></ul></div>
+          <div class="card"><h3>Idiomas <small>2</small></h3><ul class="lst"><li><b>Português</b><span>nativo</span></li><li><b>Inglês</b><span>técnico · nível intermediário</span></li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato">
+    <div class="wrap spread mid">
+      <aside class="aside">
+        <div class="pix" data-fig="plane" role="img" aria-label="Avião de papel em pixels"></div>
+        <div class="cap2"><div class="id"><span>06 / 06</span><span>contato</span></div>aberto a novas oportunidades</div>
+      </aside>
+      <div>
+        <div class="eyebrow">06 / contato <span class="strip" data-strip="6"></span></div>
+        <h2>Vamos conversar?</h2>
+        <p class="sub">Aberto a oportunidades como Analista de Sistemas, Desenvolvedor Full Stack e Analista de Negócios de TI, em Itajaí e região, no modelo presencial ou híbrido.</p>
+        <div class="contactcards">
+          <a class="card" href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener"><h3>LinkedIn ↗</h3><p>/in/enzo-maziviero</p></a>
+          <div class="card"><h3>Localização</h3><p>Itajaí, SC · presencial ou híbrido</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© 2026 Enzo Maziviero</span><span>amostra do portfólio</span></div></footer>
+
+<script>
+(function(){
+  var N=36, NS="http://www.w3.org/2000/svg";
+  /* ---------- pixel drawing helpers ---------- */
+  function grid(){var g=[],y;for(y=0;y<N;y++){g.push(new Array(N).fill(0))}return g}
+  function S(g,x,y,l){x=Math.round(x);y=Math.round(y);if(x>=0&&y>=0&&x<N&&y<N)g[y][x]=l}
+  function R(g,x,y,w,h,l){for(var j=0;j<h;j++)for(var i=0;i<w;i++)S(g,x+i,y+j,l)}
+  function L(g,x0,y0,x1,y1,l){var dx=Math.abs(x1-x0),dy=Math.abs(y1-y0),sx=x0<x1?1:-1,sy=y0<y1?1:-1,e=dx-dy;for(;;){S(g,x0,y0,l);if(x0===x1&&y0===y1)break;var e2=2*e;if(e2>-dy){e-=dy;x0+=sx}if(e2<dx){e+=dx;y0+=sy}}}
+  function D(g,cx,cy,r,l){for(var y=-r;y<=r;y++)for(var x=-r;x<=r;x++)if(x*x+y*y<=r*r+.5)S(g,cx+x,cy+y,l)}
+  function E(g,cx,cy,rx,ry,l){for(var a=0;a<6.2832;a+=.04)S(g,cx+Math.cos(a)*rx,cy+Math.sin(a)*ry,l)}
+  function inside(x,y,p){var c=false,i,j;for(i=0,j=p.length-1;i<p.length;j=i++){var xi=p[i][0],yi=p[i][1],xj=p[j][0],yj=p[j][1];if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c}return c}
+  function P(g,pts,l){for(var y=0;y<N;y++)for(var x=0;x<N;x++)if(inside(x+.5,y+.5,pts))S(g,x,y,l)}
+  function Q(g,p0,p1,p2,l,every){var k=0;for(var t=0;t<=1.0001;t+=1/28){var x=(1-t)*(1-t)*p0[0]+2*(1-t)*t*p1[0]+t*t*p2[0],y=(1-t)*(1-t)*p0[1]+2*(1-t)*t*p1[1]+t*t*p2[1];if(!every||k%every===0)S(g,x,y,l);k++}}
+
+  var FIG={};
+  FIG.chip=function(){var g=grid();R(g,12,12,12,12,2);R(g,12,12,12,1,4);R(g,12,23,12,1,4);R(g,12,12,1,12,4);R(g,23,12,1,12,4);R(g,16,16,4,4,4);
+    [14,17,20].forEach(function(p){R(g,p,8,1,4,3);R(g,p,24,1,4,3);R(g,8,p,4,1,3);R(g,24,p,4,1,3);L(g,p,7,p,3,1);L(g,p,29,p,33,1);L(g,7,p,3,p,1);L(g,29,p,33,p,1);S(g,p,3,4);S(g,p,33,4);S(g,3,p,4);S(g,33,p,4)});return g};
+  FIG.caieiras=function(){var g=grid();P(g,[[5,13],[18,5],[31,13]],3);L(g,5,13,18,5,4);L(g,18,5,31,13,4);R(g,5,13,26,2,4);
+    [7,12,17,22,27].forEach(function(x){R(g,x,16,3,12,3)});R(g,4,28,28,2,2);R(g,2,30,32,2,1);L(g,18,5,18,2,4);R(g,18,2,3,2,4);return g};
+  FIG.skychart=function(){var g=grid();Q(g,[3,12],[18,-2],[33,10],4,2);D(g,3,12,1,4);D(g,33,10,1,4);
+    P(g,[[3,24],[33,24],[29,29],[7,29]],3);
+    R(g,7,18,5,6,2);R(g,13,18,5,6,4);R(g,19,18,5,6,2);R(g,25,18,4,6,3);R(g,13,12,5,6,3);R(g,19,12,5,6,2);
+    R(g,30,15,3,9,3);R(g,30,12,3,3,4);
+    for(var x=0;x<N;x+=3){S(g,x,32,1);S(g,x+1,33,1)}return g};
+  FIG.geodis=function(){var g=grid();D(g,18,18,13,1);E(g,18,18,13,13,3);E(g,18,18,6,13,2);L(g,18,5,18,31,2);L(g,5,18,31,18,2);Q(g,[5,12],[18,12],[31,12],1);Q(g,[5,24],[18,24],[31,24],1);
+    Q(g,[7,10],[16,-1],[29,9],4,2);Q(g,[9,26],[20,12],[30,22],4,2);D(g,7,10,1,4);D(g,29,9,1,4);D(g,9,26,1,4);D(g,30,22,1,4);return g};
+  FIG.triforsys=function(){var g=grid();R(g,3,9,13,17,3);R(g,4,10,11,15,1);R(g,21,9,13,17,3);R(g,22,10,11,15,1);
+    [13,17,21].forEach(function(y){R(g,5,y,9,2,2);R(g,23,y,9,2,2)});R(g,5,13,9,2,4);R(g,23,13,9,2,4);
+    L(g,16,17,21,17,4);S(g,20,16,4);S(g,20,18,4);S(g,19,15,4);S(g,19,19,4);
+    for(var x=2;x<=34;x+=4){S(g,x,31,Math.min(4,1+Math.floor(x/9)))}for(var x2=2;x2<=34;x2+=2){S(g,x2,29,1)}return g};
+  FIG.cotareal=function(){var g=grid();R(g,2,16,4,4,4);R(g,10,14,7,8,4);R(g,11,15,5,6,2);R(g,22,5,7,6,3);R(g,22,25,7,6,3);R(g,31,15,4,6,3);
+    L(g,6,18,10,18,2);L(g,17,17,22,8,2);L(g,17,19,22,28,2);L(g,29,8,32,15,2);L(g,29,28,32,21,2);
+    S(g,13,17,4);S(g,14,16,4);S(g,15,17,4);S(g,14,18,4);
+    for(var x=0;x<N;x+=3)S(g,x,34,1);return g};
+  FIG.cap=function(){var g=grid();P(g,[[18,6],[33,14],[18,22],[3,14]],3);L(g,18,6,33,14,4);L(g,33,14,18,22,4);L(g,18,22,3,14,4);L(g,3,14,18,6,4);
+    P(g,[[9,18],[9,25],[18,30],[27,25],[27,18],[18,22]],2);L(g,9,18,9,25,3);L(g,9,25,18,30,3);L(g,18,30,27,25,3);L(g,27,25,27,18,3);
+    L(g,32,15,32,25,4);D(g,32,26,1,4);return g};
+  FIG.window=function(){var g=grid();R(g,3,5,30,26,2);R(g,3,5,30,1,4);R(g,3,30,30,1,4);R(g,3,5,1,26,4);R(g,32,5,1,26,4);R(g,4,6,28,4,3);S(g,6,8,4);S(g,8,8,4);S(g,10,8,4);
+    R(g,5,12,13,9,3);R(g,6,13,11,2,4);R(g,20,13,11,1,4);R(g,20,16,9,1,2);R(g,20,19,11,1,2);R(g,5,23,8,6,2);R(g,15,23,8,6,3);R(g,25,23,6,6,2);return g};
+  FIG.branch=function(){var g=grid();R(g,8,3,2,30,2);
+    [[7,4],[15,4],[24,4],[31,4]].forEach(function(c){D(g,9,c[0],2,c[1])});
+    L(g,10,10,20,16,3);R(g,20,16,2,10,3);L(g,21,26,10,28,3);D(g,21,18,2,4);D(g,21,23,2,4);
+    L(g,10,19,26,22,2);R(g,26,22,2,8,2);L(g,27,30,10,31,2);D(g,27,26,2,3);
+    R(g,13,5,12,1,1);R(g,13,33,10,1,1);return g};
+  FIG.plane=function(){var g=grid();P(g,[[4,17],[32,5],[22,31],[17,21]],3);L(g,4,17,32,5,4);L(g,32,5,22,31,4);L(g,22,31,17,21,4);L(g,17,21,4,17,4);L(g,32,5,17,21,4);L(g,17,21,15,29,2);
+    Q(g,[2,32],[8,26],[14,30],1,2);return g};
+
+  function build(el,g,cols,rows,cw,ch,gap,titles){
+    var svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 "+(cols*cw)+" "+(rows*ch));svg.setAttribute("preserveAspectRatio","xMidYMid meet");
+    var cells=[],x,y;
+    for(y=0;y<rows;y++)for(x=0;x<cols;x++){
+      var r=document.createElementNS(NS,"rect");
+      r.setAttribute("x",x*cw+gap/2);r.setAttribute("y",y*ch+gap/2);r.setAttribute("width",cw-gap);r.setAttribute("height",ch-gap);r.setAttribute("rx",Math.min(cw,ch)*.18);
+      r.setAttribute("class","c l"+g[y][x]);
+      if(titles&&titles[y*cols+x]){var t=document.createElementNS(NS,"title");t.textContent=titles[y*cols+x];r.appendChild(t)}
+      svg.appendChild(r);cells.push(r)
+    }
+    el.appendChild(svg);return cells;
+  }
+  function paint(cells,g){var i=0,x,y;for(y=0;y<N;y++)for(x=0;x<N;x++){var c="c l"+g[y][x];if(cells[i].getAttribute("class")!==c)cells[i].setAttribute("class",c);i++}}
+
+  /* static figures */
+  var figEls=document.querySelectorAll(".pix[data-fig]"),trajCells=null;
+  Array.prototype.forEach.call(figEls,function(el){
+    var key=el.getAttribute("data-fig");
+    var cells=build(el,FIG[key](),N,N,1,1,.16);
+    if(el.id==="trajfig")trajCells=cells;
+  });
+
+  /* pixel strips in eyebrows */
+  Array.prototype.forEach.call(document.querySelectorAll(".strip"),function(s){
+    var k=+s.getAttribute("data-strip"),i;
+    for(i=0;i<22;i++){var d=document.createElement("i");var v=(i*7+k*5+((i*k)%4))%9;d.className=v>6?"h":v>3?"m":"";s.appendChild(d)}
+  });
+
+  /* hero: months heat-grid (jan/2020 -> out/2026 = 82 columns) */
+  var COLS=82, ROWS=5, rowsDef=[
+    ["Prefeitura",[[0,12,2]]],["Skychart",[[12,23,2]]],["GEODIS",[[25,37,2]]],["Triforsys",[[39,49,2],[50,73,4]]],["Cota Real",[[73,81,4]]]
+  ];
+  var mnames=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  var hg=[],titles=[],r,c;
+  for(r=0;r<ROWS;r++){hg.push(new Array(COLS).fill(0))}
+  rowsDef.forEach(function(row,ri){row[1].forEach(function(seg){for(var m=seg[0];m<=seg[1];m++)hg[ri][m]=seg[2]})});
+  for(r=0;r<ROWS;r++)for(c=0;c<COLS;c++){var yy=2020+Math.floor(c/12),mm=mnames[c%12];titles.push(hg[r][c]?rowsDef[r][0]+" · "+mm+"/"+yy:"")}
+  var heatEl=document.getElementById("heat");
+  (function(){
+    var svg=document.createElementNS(NS,"svg");svg.setAttribute("viewBox","0 0 "+(COLS*10)+" "+(ROWS*20));
+    for(r=0;r<ROWS;r++)for(c=0;c<COLS;c++){
+      var rc=document.createElementNS(NS,"rect");rc.setAttribute("x",c*10+1);rc.setAttribute("y",r*20+1);rc.setAttribute("width",8);rc.setAttribute("height",18);rc.setAttribute("rx",2);
+      rc.setAttribute("class","c l"+hg[r][c]);
+      if(titles[r*COLS+c]){var t=document.createElementNS(NS,"title");t.textContent=titles[r*COLS+c];rc.appendChild(t)}
+      svg.appendChild(rc)
+    }
+    heatEl.appendChild(svg);
+    var rows=document.getElementById("heatrows");rowsDef.forEach(function(rw){var s=document.createElement("span");s.textContent=rw[0];rows.appendChild(s)});
+    var yrs=document.getElementById("years");
+    for(var y=2020;y<=2026;y++){var sp=document.createElement("span");sp.textContent=y;sp.style.left=(((y-2020)*12+.5)/COLS*100)+"%";yrs.appendChild(sp)}
+  })();
+
+  /* trajectory figure follows the experience in view */
+  var jobs=Array.prototype.slice.call(document.querySelectorAll(".job")),cur="cotareal";
+  var c1=document.getElementById("tcap1"),c2=document.getElementById("tcap2");
+  function setFig(key){if(!trajCells||key===cur)return;cur=key;paint(trajCells,FIG[key]())}
+  var prog=document.getElementById("prog"),queued=false;
+  function update(){
+    queued=false;
+    var de=document.documentElement,max=de.scrollHeight-window.innerHeight;
+    prog.style.transform="scaleX("+(max>0?Math.min(1,Math.max(0,window.scrollY/max)):0)+")";
+    var h=window.innerHeight,act=jobs[0],i;
+    for(i=0;i<jobs.length;i++){if(jobs[i].getBoundingClientRect().top<=h*.5)act=jobs[i]}
+    jobs.forEach(function(j){j.classList.toggle("on",j===act)});
+    setFig(act.getAttribute("data-key"));
+    c1.textContent=act.getAttribute("data-year");c2.textContent=act.getAttribute("data-co");
+  }
+  function req(){if(!queued){queued=true;requestAnimationFrame(update)}}
+  window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);window.addEventListener("load",req);
+  update();
+
+  /* project tabs */
+  var tabs=Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  tabs.forEach(function(b){b.addEventListener("click",function(){
+    var k=b.getAttribute("data-p");
+    tabs.forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});
+    ["oscar","alba","mcp","ff"].forEach(function(n){document.getElementById("p-"+n).hidden=(n!==k)});
+  })});
+
+  /* spotlight follows the pointer inside cards and experience blocks */
+  document.addEventListener("pointermove",function(e){
+    var el=e.target&&e.target.closest?e.target.closest(".job,.card"):null;
+    if(!el)return;
+    var r=el.getBoundingClientRect();
+    el.style.setProperty("--mx",(e.clientX-r.left)+"px");
+    el.style.setProperty("--my",(e.clientY-r.top)+"px");
+  },{passive:true});
+
+  /* keep the sticky figure centred in the visible area below the header */
+  var asides=Array.prototype.slice.call(document.querySelectorAll(".aside"));
+  function centerAsides(){
+    var h=window.innerHeight;
+    asides.forEach(function(a){a.style.top=Math.max(76,Math.round((h-a.offsetHeight)/2+30))+"px"});
+  }
+  centerAsides();
+  window.addEventListener("resize",centerAsides);
+  window.addEventListener("load",centerAsides);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(centerAsides);
+
+  function tick(){try{document.getElementById("clock").textContent=new Intl.DateTimeFormat("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"}).format(new Date())}catch(e){}}
+  tick();setInterval(tick,20000);
+})();
+</script>
+
+</body>
+</html>
