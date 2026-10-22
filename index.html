@@ -38,7 +38,9 @@ header.bar .wrap{display:flex;align-items:center;justify-content:space-between;g
 .logo{display:grid;grid-template-columns:repeat(3,6px);gap:2px}
 .logo i{width:6px;height:6px;border-radius:1.5px;background:var(--c2)}
 .logo i.on{background:var(--c4)}
-nav.links{display:flex;gap:6px}
+nav.note{margin:14px 0 0;padding:10px 14px;border-left:2px solid var(--c3);background:var(--bg);color:var(--muted);font-size:14.5px;line-height:1.5;border-radius:0 8px 8px 0}
+.contactcards p a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.links{display:flex;gap:6px}
 nav.links a{font-family:var(--f-m);font-size:12.5px;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
 nav.links a:hover{color:var(--fg);background:var(--surface)}
 @media (max-width:640px){
@@ -69,6 +71,10 @@ nav.links a:hover{color:var(--fg);background:var(--surface)}
 .years{position:relative;height:18px;margin:6px 0 0 0;font-family:var(--f-m);font-size:11px;color:var(--muted)}
 .years span{position:absolute;transform:translateX(-50%)}
 .panel .pf{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-family:var(--f-m);font-size:12px;color:var(--muted)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.lang button{font:inherit;font-family:var(--f-m);font-size:12px;color:var(--muted);background:transparent;border:0;padding:6px 11px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--c1);color:var(--fg)}
+@media (max-width:640px){.lang{order:1;margin-left:auto}nav.links{order:2}}
 .av{width:34px;height:34px;border-radius:9px;object-fit:cover;border:1px solid var(--line);display:block}
 .hmain{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,72px);align-items:center;margin:34px 0 44px}
 .hmain .eyebrow{margin-bottom:10px}
@@ -206,6 +212,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <a class="brand" href="#inicio"><img class="av" alt="" src="assets/avatar.jpg">enzo maziviero</a>
     <nav class="links" aria-label="Principal"><a href="#stack">stack</a><a href="#trajetoria">trajetória</a><a href="#projetos">projetos</a><a href="#github">github</a><a href="#formacao">formação</a><a href="#contato">contato</a></nav>
+    <div class="lang" role="group" aria-label="Idioma"><button type="button" data-l="pt" aria-pressed="true">PT</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
   </div>
 </header>
 
@@ -222,7 +229,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <div class="eyebrow">// olá, eu sou</div>
           <h1>Enzo<br>Maziviero<br><em>Analista de Sistemas.</em></h1>
           <p>Desenvolvedor Full Stack com mais de 5 anos em sistemas logísticos (TMS e ERP), integrações e automação. Atuo entre o negócio e a tecnologia: levanto requisitos, desenho o processo e entrego a solução de ponta a ponta.</p>
-          <div class="btns"><a class="btn pri" href="#trajetoria">Ver trajetória</a><a class="btn" href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+          <div class="btns"><a class="btn pri" href="#trajetoria">Ver trajetória</a><a class="btn" href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="assets/CV_Enzo_Maziviero.pdf" download="CV_Enzo_Maziviero.pdf">Baixar CV ↓</a></div>
         </div>
         <figure class="pwrap">
           <div class="portrait"><img alt="Retrato de Enzo Maziviero sentado à mesa, com um teclado mecânico à frente" src="assets/photo.jpg"></div>
@@ -299,7 +306,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="jh"><h3>Analista de Sistemas</h3><span class="dt">mar 2024 — fev 2026</span></div>
             <div class="co">Triforsys Sistemas</div>
             <div class="meta">
-              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>São Paulo, SP</span></p></div>
               <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 1 ano e 11 meses</span></p></div>
               <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Sistemas · TMS e ERP</span></p></div>
             </div>
@@ -316,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="jh"><h3>Suporte de Sistemas</h3><span class="dt">abr 2023 — mar 2024</span></div>
             <div class="co">Triforsys Sistemas</div>
             <div class="meta">
-              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>SC</span></p></div>
+              <div><svg viewBox="0 0 16 16"><path d="M8 15s5-4.2 5-8A5 5 0 0 0 3 7c0 3.8 5 8 5 8z"/><circle cx="8" cy="7" r="1.8"/></svg><p style="margin:0"><small>Local</small><span>São Paulo, SP</span></p></div>
               <div><svg viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="1.5"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><p style="margin:0"><small>Duração</small><span>≈ 11 meses</span></p></div>
               <div><svg viewBox="0 0 16 16"><path d="M3 14V3h7v11M10 7h3v7M2 14h12M5.5 5.5h2M5.5 8h2M5.5 10.5h2"/></svg><p style="margin:0"><small>Setor</small><span>Sistemas · TMS e ERP</span></p></div>
             </div>
@@ -486,7 +493,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
         <div class="cards">
           <div class="card wide">
-            <div class="ptag">projeto acadêmico · full stack</div>
+            <div class="ptag">projeto universitário · full stack</div>
             <h3>Doa Fácil</h3>
             <p>Sistema web de divulgação de doações por região. Quem tem algo para doar publica um anúncio com fotos e local de retirada, e quem se interessa entra em contato direto.</p>
             <ul class="pl">
@@ -496,10 +503,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
               <li>Publicação em Vercel, Render e Supabase.</li>
             </ul>
             <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Supabase</span></div>
-            <p class="links"><a class="btn" href="https://github.com/devmaziviero/doa-facil" target="_blank" rel="noopener">Código ↗</a></p>
+            <p class="links"><a class="btn pri" href="https://doa-facil-alpha.vercel.app" target="_blank" rel="noopener">Ver no ar ↗</a><a class="btn" href="https://github.com/devmaziviero/doa-facil" target="_blank" rel="noopener">Código ↗</a></p>
+            <p class="note">Projeto universitário. A API fica em hospedagem gratuita (Render), que adormece quando fica sem uso e pode demorar para acordar no primeiro acesso.</p>
           </div>
           <div class="card">
-            <div class="ptag">projeto acadêmico · mobile + API</div>
+            <div class="ptag">projeto universitário · mobile + API</div>
             <h3>BusTrack</h3>
             <p>App para quem usa transporte público: encontra pontos e rotas próximos, favorita linhas e configura alarmes, com login por token.</p>
             <ul class="pl">
@@ -570,12 +578,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="contactcards">
           <a class="card" href="https://www.linkedin.com/in/enzo-maziviero-b90903218" target="_blank" rel="noopener"><h3>LinkedIn ↗</h3><p>/in/enzo-maziviero</p></a>
           <div class="card"><h3>Localização</h3><p>Itajaí, SC · presencial ou híbrido</p></div>
+          <div class="card"><h3>E-mail</h3><p><a href="mailto:dev.enzojp@gmail.com">dev.enzojp@gmail.com</a></p><p><a href="mailto:enzodev.maziviero@gmail.com">enzodev.maziviero@gmail.com</a></p></div>
+          <a class="card" href="assets/CV_Enzo_Maziviero.pdf" download="CV_Enzo_Maziviero.pdf"><h3>Currículo ↓</h3><p>Baixar em PDF</p></a>
         </div>
       </div>
     </div>
   </section>
 </main>
-<footer><div class="wrap"><span>© 2026 Enzo Maziviero</span><span>amostra do portfólio</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Enzo Maziviero</span><span>feito com HTML, CSS e JavaScript</span></div></footer>
 
 <script>
 (function(){
@@ -667,7 +677,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     for(r=0;r<ROWS;r++)for(c=0;c<COLS;c++){
       var rc=document.createElementNS(NS,"rect");rc.setAttribute("x",c*10+1);rc.setAttribute("y",r*20+1);rc.setAttribute("width",8);rc.setAttribute("height",18);rc.setAttribute("rx",2);
       rc.setAttribute("class","c l"+hg[r][c]);
-      if(titles[r*COLS+c]){var t=document.createElementNS(NS,"title");t.textContent=titles[r*COLS+c];rc.appendChild(t)}
+      if(titles[r*COLS+c]){var t=document.createElementNS(NS,"title");t.textContent=titles[r*COLS+c];t.setAttribute("data-r",r);t.setAttribute("data-c",c);rc.appendChild(t)}
       svg.appendChild(rc)
     }
     heatEl.appendChild(svg);
@@ -689,7 +699,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     for(i=0;i<jobs.length;i++){if(jobs[i].getBoundingClientRect().top<=h*.5)act=jobs[i]}
     jobs.forEach(function(j){j.classList.toggle("on",j===act)});
     setFig(act.getAttribute("data-key"));
-    c1.textContent=act.getAttribute("data-year");c2.textContent=act.getAttribute("data-co");
+    c1.textContent=act.getAttribute("data-year");c2.textContent=T(act.getAttribute("data-co"));
   }
   function req(){if(!queued){queued=true;requestAnimationFrame(update)}}
   window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);window.addEventListener("load",req);
@@ -725,6 +735,53 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   function tick(){try{document.getElementById("clock").textContent=new Intl.DateTimeFormat("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Sao_Paulo"}).format(new Date())}catch(e){}}
   tick();setInterval(tick,20000);
+
+  /* ---------- PT / EN ---------- */
+  var EN={"trajetória":"career","projetos":"projects","formação":"education","contato":"contact","// olá, eu sou":"// hi, I'm","Analista de Sistemas.":"Systems Analyst.","Desenvolvedor Full Stack com mais de 5 anos em sistemas logísticos (TMS e ERP), integrações e automação. Atuo entre o negócio e a tecnologia: levanto requisitos, desenho o processo e entrego a solução de ponta a ponta.":"Full Stack Developer with over 5 years in logistics systems (TMS and ERP), integrations and automation. I work between business and technology: I gather requirements, design the process and deliver the solution end to end.","Ver trajetória":"See my career","Baixar CV ↓":"Download CV ↓","aberto a oportunidades":"open to opportunities","82 meses":"82 months","de jan/2020 a out/2026, um quadrado por mês":"from Jan/2020 to Oct/2026, one square per month","suporte":"support","analista":"analyst","Prefeitura":"City Hall","passe o mouse para ver o mês":"hover to see the month","role para explorar ↓":"scroll to explore ↓","anos de experiência em tecnologia":"years of experience in technology","empresas e cargos na trajetória":"companies and roles","competências em 6 áreas":"skills in 6 areas","multinacional de logística (GEODIS)":"logistics multinational (GEODIS)","36 competências em 6 áreas":"36 skills in 6 areas","Com o que eu trabalho":"What I work with","Da análise de requisitos ao desenho da solução, do front-end ao banco de dados, da integração entre sistemas à automação com IA.":"From requirements analysis to solution design, from front-end to database, from systems integration to AI automation.","função principal":"main role","Análise de sistemas":"Systems analysis","Do problema ao desenho da solução: entender a necessidade, definir as regras e conectar os sistemas.":"From problem to solution design: understand the need, define the rules and connect the systems.","Levantamento de requisitos":"Requirements gathering","Análise de negócios":"Business analysis","Regras de negócio":"Business rules","Desenho de soluções":"Solution design","Modelagem de dados":"Data modeling","Integração de sistemas":"Systems integration","Documentação técnica":"Technical documentation","Testes":"Testing","Gestão de incidentes":"Incident management","Desenvolvimento":"Development","Front-end, back-end e integrações por API.":"Front-end, back-end and API integrations.","Negócio e processos":"Business and processes","Requisitos, desenho de processo e indicadores.":"Requirements, process design and KPIs.","Dados e cloud":"Data and cloud","Modelagem, SQL e serviços de nuvem.":"Modeling, SQL and cloud services.","Gestão e qualidade":"Management and quality","Agilidade, serviços de TI e melhoria contínua.":"Agile, IT services and continuous improvement.","Automação e IA":"Automation and AI","Fluxos automatizados e agentes de IA no processo.":"Automated workflows and AI agents in the process.","02 / trajetória":"02 / career","Experiência":"Experience","Seis cargos em cinco empresas. A figura ao lado muda a cada experiência, com o setor onde atuei.":"Six roles at five companies. The figure on the left changes with each experience, following the sector where I worked.","Analista de Sistemas":"Systems Analyst","fev 2026 — out 2026":"Feb 2026 — Oct 2026","Local":"Location","Duração":"Duration","≈ 8 meses":"≈ 8 months","Setor":"Sector","Investimentos":"Investments","Desenvolvimento Full Stack com React, TypeScript e Node.js.":"Full Stack development with React, TypeScript and Node.js.","Workflows em n8n com status, responsáveis, SLA, histórico e rastreabilidade.":"n8n workflows with status, owners, SLA, history and traceability.","Supabase e PostgreSQL: modelagem, autenticação, RLS, policies e Edge Functions.":"Supabase and PostgreSQL: modeling, authentication, RLS, policies and Edge Functions.","IA aplicada ao desenvolvimento (Claude Code e Lovable), em times com Scrum e Kanban.":"AI applied to development (Claude Code and Lovable), in teams using Scrum and Kanban.","IA":"AI","mar 2024 — fev 2026":"Mar 2024 — Feb 2026","≈ 1 ano e 11 meses":"≈ 1 year 11 months","Sistemas · TMS e ERP":"Systems · TMS and ERP","Análise e desenvolvimento: back-end em Node.js e APIs REST, front-end em React.":"Analysis and development: back-end in Node.js and REST APIs, front-end in React.","SQL avançado: views, functions, procedures e triggers.":"Advanced SQL: views, functions, procedures and triggers.","Integrações entre TMS, ERPs e sistemas legados.":"Integrations between TMS, ERPs and legacy systems.","Automações em Python, relatórios em Crystal Reports e IA aplicada.":"Automations in Python, reports in Crystal Reports and applied AI.","Suporte de Sistemas":"Systems Support","abr 2023 — mar 2024":"Apr 2023 — Mar 2024","≈ 11 meses":"≈ 11 months","Integrações via APIs REST e EDI (tracking e eventos) em ambientes TMS e ERP.":"Integrations via REST APIs and EDI (tracking and events) in TMS and ERP environments.","Análises em SQL, testes e documentação técnica.":"SQL analysis, testing and technical documentation.","Assistente de TI":"IT Assistant","fev 2022 — fev 2023":"Feb 2022 — Feb 2023","≈ 1 ano":"≈ 1 year","Logística · multinacional":"Logistics · multinational","Primeira experiência em ambiente multinacional de logística.":"First experience in a multinational logistics environment.","Gestão de acessos e permissões com Active Directory.":"Access and permission management with Active Directory.","Melhoria de processos com Scrum, ITIL e Six Sigma, e relacionamento com fornecedores de TI.":"Process improvement with Scrum, ITIL and Six Sigma, and IT vendor relationships.","Suporte de Sistemas N2":"Systems Support (L2)","jan 2021 — dez 2021":"Jan 2021 — Dec 2021","Software logístico · comex":"Logistics software · foreign trade","Suporte N2 em sistema logístico internacional, de uma software house voltada ao agenciamento de carga e ao comércio exterior.":"L2 support on an international logistics system, from a software house focused on freight forwarding and foreign trade.","Tratamento de incidentes e bugs, com análises e consultas em SQL.":"Handling of incidents and bugs, with SQL analysis and queries.","Uso de Git, HTML e CSS no dia a dia.":"Day-to-day use of Git, HTML and CSS.","Treinamento de usuários.":"User training.","Comex":"Foreign trade","Suporte N2":"L2 Support","Suporte Técnico":"Technical Support","jan 2020 — jan 2021":"Jan 2020 — Jan 2021","Prefeitura de Caieiras":"Caieiras City Hall","Serviço público":"Public sector","Suporte e infraestrutura de TI para os usuários da prefeitura.":"IT support and infrastructure for city hall users.","Primeiras atividades de desenvolvimento web, em paralelo ao suporte.":"First web development activities, alongside support.","Suporte":"Support","Infraestrutura":"Infrastructure","4 sites de front-end e design":"4 front-end and design sites","03 / projetos":"03 / projects","Front-end e design":"Front-end and design","Quatro sites com foco em interface e identidade visual. Clique para alternar entre eles.":"Four websites focused on interface and visual identity. Click to switch between them.","site institucional · terceiro setor":"institutional site · non-profit","site de clínica · saúde e bem-estar":"clinic site · health and wellness","landing page · curso online":"landing page · online course","proposta de redesign · logística":"redesign proposal · logistics","site institucional":"institutional site","Site de uma Organização da Sociedade Civil de Balneário Camboriú, dedicada ao acolhimento de pessoas em situação de vulnerabilidade desde 2017. Apresenta a instituição, as modalidades de atendimento e os números de impacto, com chamada para doação.":"Website of a civil society organization in Balneário Camboriú, dedicated to sheltering people in vulnerable situations since 2017. It presents the institution, its services and impact numbers, with a call to donate.","Página inicial em tela cheia, com foto de floresta e título em três linhas nas cores verde e dourado.":"Full-screen home page with a forest photo and a three-line title in green and gold.","Navegação por serviço (Comunidade Terapêutica, Casa Alva e Casa de Passagem) e botão \"Doe Agora\" sempre visível no topo.":"Navigation by service (Therapeutic Community, Casa Alva and Casa de Passagem) and an always-visible \"Doe Agora\" (Donate now) button at the top.","Seções de missão, valores, serviços, impacto e depoimentos, e um player de música ambiente opcional.":"Sections for mission, values, services, impact and testimonials, plus an optional ambient music player.","Site institucional":"Institutional site","Terceiro setor":"Non-profit","Ver site ↗":"View site ↗","site de clínica":"clinic site","Site de uma clínica de saúde e bem-estar, com os tratamentos capilares em destaque e chamada para agendar consulta. A identidade é elegante e acolhedora, pensada para transmitir confiança.":"Website of a health and wellness clinic, highlighting hair treatments with a call to book an appointment. The identity is elegant and welcoming, designed to convey trust.","Paleta em creme, verde profundo e dourado, com o logotipo dourado centralizado no topo.":"Cream, deep green and gold palette, with the golden logo centered at the top.","Carrossel de tratamentos, cada um com título, descrição e chamada para conhecer.":"Treatment carousel, each with a title, description and call to learn more.","Menu em hambúrguer e botão \"Agende uma consulta\" sempre à vista no cabeçalho.":"Hamburger menu and an always-visible \"Agende uma consulta\" (Book an appointment) button in the header.","Site de clínica":"Clinic site","Carrossel":"Carousel","Landing page de um curso para quem está começando como storymaker e reelsmaker. Posiciona a marca, apresenta o conteúdo e leva o visitante até a compra.":"Landing page for a course aimed at beginner storymakers and reelsmakers. It positions the brand, presents the content and guides the visitor to purchase.","Página inicial com retratos em destaque, título em branco e roxo e o botão \"Adquirir já!\" sempre visível no topo.":"Home page with featured portraits, a white and purple title and an always-visible \"Adquirir já!\" (Get it now) button at the top.","Seções de módulos, aprendizados, feedbacks, sobre e perguntas frequentes.":"Sections for modules, learnings, feedback, about and FAQ.","React, Vite e Tailwind CSS, com foco em responsividade e carregamento rápido.":"React, Vite and Tailwind CSS, focused on responsiveness and fast loading.","Código ↗":"Code ↗","proposta de redesign":"redesign proposal","Proposta de redesign do site de uma empresa de logística, com soluções, estrutura e contato. Visual forte em azul-marinho e amarelo, com animações de rolagem.":"Redesign proposal for a logistics company's website, with solutions, structure and contact pages. Bold navy and yellow look, with scroll animations.","Quatro páginas (início, soluções, estrutura e contato) em HTML e CSS puros, sem etapa de build.":"Four pages (home, solutions, structure and contact) in plain HTML and CSS, with no build step.","Animações com GSAP, ScrollTrigger e Lenis, com opção de desligá-las na própria página.":"Animations with GSAP, ScrollTrigger and Lenis, with an option to turn them off on the page itself.","Mapa estilizado do Brasil gerado por script, e publicação automática na Vercel a cada envio.":"Stylized map of Brazil generated by a script, and automatic deployment on Vercel on every push.","12 repositórios · 9 públicos":"12 repositories · 9 public","Código no GitHub":"Code on GitHub","Projetos full stack e mobile que mantenho lá, com banco de dados, API e publicação.":"Full stack and mobile projects I keep there, with database, API and deployment.","repositórios":"repositories","públicos":"public","linguagens":"languages","projeto universitário · full stack":"university project · full stack","Sistema web de divulgação de doações por região. Quem tem algo para doar publica um anúncio com fotos e local de retirada, e quem se interessa entra em contato direto.":"Web system for advertising donations by region. Whoever has something to donate posts a listing with photos and a pickup location, and interested people contact them directly.","Front-end em React, TypeScript e Vite, com Material UI.":"Front-end in React, TypeScript and Vite, with Material UI.","API em Node.js e Express, PostgreSQL com SQL puro e envio de até 5 fotos por anúncio ao Supabase Storage.":"API in Node.js and Express, PostgreSQL with plain SQL and upload of up to 5 photos per listing to Supabase Storage.","Estado e cidade vêm da API pública do IBGE, e cada anúncio é gerenciado por um código, sem login na primeira versão.":"State and city come from the public IBGE API, and each listing is managed by a code, with no login in the first version.","Publicação em Vercel, Render e Supabase.":"Deployed on Vercel, Render and Supabase.","Ver no ar ↗":"View live ↗","Projeto universitário. A API fica em hospedagem gratuita (Render), que adormece quando fica sem uso e pode demorar para acordar no primeiro acesso.":"University project. The API runs on free hosting (Render), which goes to sleep when idle and may take a while to wake up on the first visit.","projeto universitário · mobile + API":"university project · mobile + API","App para quem usa transporte público: encontra pontos e rotas próximos, favorita linhas e configura alarmes, com login por token.":"App for public transport users: finds nearby stops and routes, favorites lines and sets alarms, with token login.","App em React (mobile) com geolocalização.":"React (mobile) app with geolocation.","API própria com JWT e controle de acesso, ligada ao PostgreSQL no Supabase.":"Custom API with JWT and access control, connected to PostgreSQL on Supabase.","Parte dos dados de ônibus ainda é simulada.":"Part of the bus data is still simulated.","repositório privado · gestão interna":"private repository · internal management","Sistema de gestão de uma OSC":"Management system for a non-profit","Sistema web de gestão interna de uma organização do terceiro setor, com painel e módulos de cadastros, estoque, financeiro e documentos.":"Internal web management system for a non-profit organization, with a dashboard and modules for records, inventory, finance and documents.","React, Vite e Tailwind CSS, com Supabase para banco, autenticação e arquivos.":"React, Vite and Tailwind CSS, with Supabase for database, authentication and files.","Schema versionado em migrations, perfis de acesso e regras de segurança por linha (RLS).":"Schema versioned in migrations, access profiles and row-level security (RLS) rules.","projeto pessoal · front-end":"personal project · front-end","Este portfólio":"This portfolio","O próprio site que você está vendo: uma página única, sem framework e sem etapa de build, pensada para contar a trajetória por setor.":"The very site you are looking at: a single page, with no framework and no build step, designed to tell my career by sector.","HTML, CSS e JavaScript puros, com as figuras em pixels geradas por código e a figura da trajetória trocando a cada experiência.":"Plain HTML, CSS and JavaScript, with pixel figures generated by code and the career figure changing with each experience.","Mapa de 82 meses e demais gráficos montados a partir dos dados da trajetória.":"An 82-month map and other charts built from the career data.","Publicado na Vercel, com deploy automático a cada envio ao GitHub.":"Hosted on Vercel, with automatic deployment on every push to GitHub.","Ver perfil no GitHub ↗":"View GitHub profile ↗","05 / formação":"05 / education","3 formações · 4 certificações":"3 degrees and courses · 4 certifications","Formação e certificações":"Education and certifications","Graduação em andamento de conclusão em 2026, base técnica e cursos que sustentam o dia a dia.":"Degree expected in 2026, a technical foundation and courses that support my day-to-day work.","Formação":"Education","Tecnólogo em Análise e Desenvolvimento de Sistemas":"Technologist degree in Systems Analysis and Development","UNIVALI · conclusão em 2026":"UNIVALI · expected 2026","Técnico em Informática para Internet":"Technical diploma in Internet Informatics","Desenvolvimento Full Stack":"Full Stack Development","Certificações":"Certifications","Gestão de Serviços de TI":"IT Service Management","Idiomas":"Languages","Português":"Portuguese","nativo":"native","Inglês":"English","técnico · nível intermediário":"technical · intermediate level","aberto a novas oportunidades":"open to new opportunities","06 / contato":"06 / contact","Vamos conversar?":"Let's talk?","Aberto a oportunidades como Analista de Sistemas, Desenvolvedor Full Stack e Analista de Negócios de TI, em Itajaí e região, no modelo presencial ou híbrido.":"Open to opportunities as Systems Analyst, Full Stack Developer and IT Business Analyst, in Itajaí and the region, on-site or hybrid.","Localização":"Location","Itajaí, SC · presencial ou híbrido":"Itajaí, SC · on-site or hybrid","Currículo ↓":"Resume ↓","Baixar em PDF":"Download as PDF","feito com HTML, CSS e JavaScript":"built with HTML, CSS and JavaScript","Principal":"Main","Idioma":"Language","Retrato de Enzo Maziviero sentado à mesa, com um teclado mecânico à frente":"Portrait of Enzo Maziviero sitting at a desk with a mechanical keyboard in front of him","Chip estilizado em pixels":"Stylized chip in pixels","Figura em pixels que muda a cada experiência":"Pixel figure that changes with each experience","Janela de navegador em pixels":"Browser window in pixels","Página inicial do site da OSC Árvore da Vida, com floresta ao fundo e o título Cuidado, esperança e recomeço":"Home page of the OSC Árvore da Vida website, with a forest background and the title Cuidado, esperança e recomeço","Página inicial do site da Clínica Alba, com o título Recupere sua confiança e um carrossel de tratamentos":"Home page of the Clínica Alba website, with the title Recupere sua confiança and a treatment carousel","Página inicial da landing page MCP, com o título Do zero ao propósito":"Home page of the MCP landing page, with the title Do zero ao propósito","Página inicial da proposta de redesign da FF Logística, com o título Sua logística simplificada do armazém à entrega":"Home page of the FF Logística redesign proposal, with the title Sua logística simplificada do armazém à entrega","Grafo de commits e ramificações em pixels":"Commit and branch graph in pixels","Linguagens principais: JavaScript 6, TypeScript 2, CSS 1, HTML 2, PHP 1 repositórios":"Main languages: JavaScript 6, TypeScript 2, CSS 1, HTML 2, PHP 1 repositories","Capelo de formatura em pixels":"Graduation cap in pixels","Avião de papel em pixels":"Paper plane in pixels"};
+  var LANG="pt";
+  var origText=new WeakMap();
+  var HEATEN=["City Hall","Skychart","GEODIS","Triforsys","Cota Real"],MEN=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+  function eachText(cb){
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var p=n.parentElement;
+      if(!p||/^(SCRIPT|STYLE)$/.test(p.tagName)||p.hasAttribute("data-r")||p.id==="tcap1"||p.id==="tcap2"||p.id==="clock")return NodeFilter.FILTER_REJECT;
+      return n.nodeValue.trim()?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+    var n;while((n=w.nextNode()))cb(n);
+  }
+  function applyLang(l){
+    LANG=l;
+    eachText(function(n){
+      if(!origText.has(n))origText.set(n,n.nodeValue);
+      var o=origText.get(n),k=o.trim();
+      var v=(l==="en"&&EN[k]!==undefined)?o.replace(k,EN[k]):o;
+      if(n.nodeValue!==v)n.nodeValue=v;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[alt],[aria-label]"),function(e){
+      ["alt","aria-label"].forEach(function(a){
+        if(!e.hasAttribute(a))return;
+        var d="data-pt-"+a;
+        if(!e.hasAttribute(d))e.setAttribute(d,e.getAttribute(a));
+        var o=e.getAttribute(d);
+        e.setAttribute(a,(l==="en"&&EN[o]!==undefined)?EN[o]:o);
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("title[data-r]"),function(el){
+      var r=+el.getAttribute("data-r"),c=+el.getAttribute("data-c"),y=2020+Math.floor(c/12),m=c%12;
+      el.textContent=(l==="en"?HEATEN[r]:rowsDef[r][0])+" · "+(l==="en"?MEN[m]:mnames[m])+"/"+y;
+    });
+    document.documentElement.lang=l==="en"?"en":"pt-BR";
+    document.title=l==="en"?"Enzo Maziviero · Systems Analyst":"Portfólio Enzo Maziviero";
+    Array.prototype.forEach.call(document.querySelectorAll(".lang button"),function(b){b.setAttribute("aria-pressed",b.getAttribute("data-l")===l?"true":"false")});
+    try{localStorage.setItem("lang",l)}catch(e){}
+    req();
+  }
+  function T(s){return LANG==="en"&&EN[s]!==undefined?EN[s]:s}
+  Array.prototype.forEach.call(document.querySelectorAll(".lang button"),function(b){b.addEventListener("click",function(){applyLang(b.getAttribute("data-l"))})});
+  (function(){
+    var saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
+    var pref=saved||(((navigator.language||"pt").toLowerCase().indexOf("pt")===0)?"pt":"en");
+    if(pref==="en")applyLang("en");
+  })();
 })();
 </script>
 
